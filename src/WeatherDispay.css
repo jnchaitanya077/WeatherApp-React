@@ -8,9 +8,9 @@ h1{
    text-align: center;
    height: 100vh;
    vertical-align: middle;
-   padding-top: 25%;
-   color: white;
-   font-size: 100px !important;
+   padding-top: 20%;
+   color: rgba(11, 15, 13, 0.81);
+   font-size: 5.56em !important;
    font-family: 'Anton', sans-serif;;
 
     /* Center and Scale the Image */
@@ -19,30 +19,44 @@ h1{
    background-size: cover;
 
 }
+
+.main-body{
+    background-color:rgba(168, 244, 244, 0.41) ;
+    margin: 0 32% 5% 32%;
+
+
+}
 .center{
     display: inline-block;
     vertical-align: middle;
     line-height: normal;
 }
 
-.Summer.Morning{
+.Summer.Morning, .AfterNoon{
     background-image: url("./images/summer-morning.jpg");
 }
 
-.Summer.Night{
+.Summer.Evening{
+    background-image: url("./images/1685018.jpg");
+}
+
+.Summer.Night, .Sleep{
     background-image: url("./images/photo.jpeg");
 }
 
-.Summer.Evening{
-    background-image: url("./images/maxresdefault.jpg");
-}
 
-.Winter.Morning{
+
+.Winter.Morning, .AfterNoon{
     background-image: url("./images/a0xTgeG.jpg");
     
 }
 
-.Winter.Night{
+.Winter.Evening{
+    background-image: url("./images/1685018.jpg");
+}
+
+.Winter.Night ,.Sleep{
     background-image: url("./images/50094.jpg");
+    color:rgba(242, 247, 242, 0.97);
 }
 
