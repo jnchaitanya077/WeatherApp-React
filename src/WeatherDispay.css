@@ -1,0 +1,48 @@
+h1{
+    font-size: unset;
+}
+
+.weather-display{
+ 
+   margin: auto;
+   text-align: center;
+   height: 100vh;
+   vertical-align: middle;
+   padding-top: 25%;
+   color: white;
+   font-size: 100px !important;
+   font-family: 'Anton', sans-serif;;
+
+    /* Center and Scale the Image */
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+
+}
+.center{
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+.Summer.Morning{
+    background-image: url("./images/summer-morning.jpg");
+}
+
+.Summer.Night{
+    background-image: url("./images/photo.jpeg");
+}
+
+.Summer.Evening{
+    background-image: url("./images/maxresdefault.jpg");
+}
+
+.Winter.Morning{
+    background-image: url("./images/a0xTgeG.jpg");
+    
+}
+
+.Winter.Night{
+    background-image: url("./images/50094.jpg");
+}
+

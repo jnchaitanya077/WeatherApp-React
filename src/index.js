@@ -1,28 +1,38 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import WeatherDisplay from "./WeatherDisplay";
+import Spinner from "./Spinner";
 
 class App extends React.Component {
-  state = { lat: null, log: null, errorMessage: "" };
+  state = {
+    lat: null,
+    log: null,
+    errorMessage: "",
+    city: "",
+    temperature: null,
+    weather: "",
+    isFetched: false,
+  };
 
   componentDidMount() {
     //Getting current coordinates.
-    console.log(
-      window.navigator.geolocation.getCurrentPosition(
-        (lat) =>
-          this.setState({
-            lat: lat.coords.latitude,
-            log: lat.coords.longitude,
-            city: "",
-            temperature: null,
-          }),
-        (err) => this.setState({ errorMessage: err.message })
-      )
+    window.navigator.geolocation.getCurrentPosition(
+      (lat) =>
+        this.setState({
+          ...this.state,
+          lat: lat.coords.latitude,
+          log: lat.coords.longitude,
+        }),
+      (err) => this.setState({ errorMessage: err.message })
     );
+    console.log("exc");
   }
 
   fetchData() {
     //Fetching the Weather Data.
-    const key = "0553db3363521486ac3885e55b7730fd";
+    this.setState({ ...this, isFetched: true });
+    console.log("inside");
+    const key = "03c33989872334afce3c572b484ae129";
     const url =
       "https://api.openweathermap.org/data/2.5/weather?lat=" +
       this.state.lat +
@@ -35,30 +45,46 @@ class App extends React.Component {
       .then(function (resp) {
         return resp.json();
       }) // Convert data to json
-      .then(function (data) {
+      .then((data) => {
         console.log(data);
+        return this.setState({
+          ...this.state,
+          city: data.name,
+          temperature: data.main.temp,
+          weather: data.weather[0].main,
+        });
       })
       .catch(function (err) {
         // catch any errors
         console.log(err);
-        this.setState({ errorMessage: err });
+        // this.setState({ errorMessage: err });
       });
   }
 
   loadDisplay() {
     if (this.state.errorMessage)
-      return <div>Error: {this.state.errorMessage}</div>;
+      return (
+        <div>
+          <Spinner message="Please Accept the Location Services..." />
+        </div>
+      );
     if (this.state.lat && this.state.log && !this.state.errorMessage)
       return (
         <div>
-          {this.fetchData()}
-          lat:{this.state.lat}
-          <br />
-          log:{this.state.log}
-          <br />
+          {!this.state.isFetched ? this.fetchData() : null}
+          <WeatherDisplay
+            city={this.state.city}
+            weather={this.state.weather}
+            temperature={this.state.temperature}
+            lat={this.state.lat}
+          />
         </div>
       );
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <Spinner message="Loading..." />
+      </div>
+    );
   }
 
   render() {
