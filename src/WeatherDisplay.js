@@ -36,7 +36,8 @@ const WeatherDispaly = (params) => {
           {"\u00b0"}C
         </h3>
         <h3>
-          <i className="sync icon"></i> Last updated 23 minutes ago
+          <i className="sync icon"></i> Last updated {params.lastUpdated}{" "}
+          minutes ago
         </h3>
       </div>
     </div>

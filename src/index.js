@@ -12,6 +12,7 @@ class App extends React.Component {
     temperature: null,
     weather: "",
     isFetched: false,
+    lastUpdated: 0,
   };
 
   componentDidMount() {
@@ -26,6 +27,17 @@ class App extends React.Component {
       (err) => this.setState({ errorMessage: err.message })
     );
     console.log("exc");
+
+    //update weather for every 10 min.
+    setInterval(() => {
+      this.fetchData();
+      this.setState({ ...this, lastUpdated: 0 });
+    }, 600000);
+
+    //refresh last updated status for every 1 min interval.
+    var refreshId = setInterval(() => {
+      this.setState({ ...this, lastUpdated: this.state.lastUpdated + 1 });
+    }, 60000);
   }
 
   fetchData() {
@@ -77,6 +89,7 @@ class App extends React.Component {
             weather={this.state.weather}
             temperature={this.state.temperature}
             lat={this.state.lat}
+            lastUpdated={this.state.lastUpdated}
           />
         </div>
       );
