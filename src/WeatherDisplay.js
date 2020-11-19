@@ -1,5 +1,6 @@
 import React from "react";
 import "./WeatherDispay.css";
+import Time from "./Time";
 
 const GetSeason = (lat, month) => {
   if (month > 2 && month < 9) {
@@ -24,6 +25,7 @@ const WeatherDispaly = (params) => {
 
   return (
     <div className={`weather-display ${season} ${Greet}`}>
+      <Time />
       <div className="main-body">
         <h1 className="centre">{Greet}!!</h1>
         <h2 className="centre">
