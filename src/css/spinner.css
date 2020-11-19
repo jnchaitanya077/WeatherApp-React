@@ -1,0 +1,16 @@
+.loadingScreen{
+    background-color: black;
+    height: 100vh;
+}
+
+.spinner{
+    
+    color:white;
+    z-index: 1031;
+    padding-top: 20%;
+    text-align: center;
+}
+
+span{
+    display: block;
+}

@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import WeatherDisplay from "./WeatherDisplay";
 import Spinner from "./Spinner";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends React.Component {
   state = {
@@ -28,11 +29,11 @@ class App extends React.Component {
     );
     console.log("exc");
 
-    //update weather for every 10 min.
+    //update weather for every 20 min.
     setInterval(() => {
       this.fetchData();
       this.setState({ ...this, lastUpdated: 0 });
-    }, 600000);
+    }, 1200000);
 
     //refresh last updated status for every 1 min interval.
     var refreshId = setInterval(() => {

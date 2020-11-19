@@ -1,10 +1,12 @@
 import React from "react";
+import "./css/spinner.css";
 
 function Spinner(props) {
   return (
-    <div style={{ position: "unset" }} className="ui segment">
-      <div className="ui active dimmer">
-        <div className="ui text loader">{props.message}</div>
+    <div className="loadingScreen">
+      <div className="spinner">
+        <i class="fas fa-circle-notch fa-lg fa-spin"></i>
+        <span>{props.message}</span>
       </div>
     </div>
   );
