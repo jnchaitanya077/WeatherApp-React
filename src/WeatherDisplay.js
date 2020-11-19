@@ -32,11 +32,11 @@ const WeatherDispaly = (params) => {
           {params.city}({season})
         </h2>
         <h3 className="centre" style={{ paddingBottom: "25px" }}>
-          {params.weather}, <i class="cloud icon"></i> {params.temperature}
+          {params.weather}, <i className="cloud icon"></i> {params.temperature}
           {"\u00b0"}C
         </h3>
         <h3>
-          <i class="sync icon"></i> Last updated 23 minutes ago
+          <i className="sync icon"></i> Last updated 23 minutes ago
         </h3>
       </div>
     </div>
