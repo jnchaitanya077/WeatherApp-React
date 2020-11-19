@@ -1,5 +1,11 @@
+html{
+    font-size: 100% !important;
+}
+body { font-size: 1em !important;
+}
+
 h1{
-    font-size: unset;
+    font-size: 5rem !important;
 }
 
 .weather-display{
@@ -8,10 +14,9 @@ h1{
    text-align: center;
    height: 100vh;
    vertical-align: middle;
-   padding-top: 20%;
+   padding-top: 15%;
    color: rgba(11, 15, 13, 0.81);
-   font-size: 5.56em !important;
-   font-family: 'Anton', sans-serif;;
+
 
     /* Center and Scale the Image */
    background-position: center;
@@ -22,14 +27,12 @@ h1{
 }
 
 .main-body{
-    /* background-color:rgba(168, 244, 244, 0.41) ; */
     background-color: rgba(218, 235, 235, 0.60);
-    margin: 0 32% 5% 32%;
-    border: 5px solid black;
-    border-radius: 5%;
-
-
+    margin: 1% 32% 5% 32%;
+    padding-top: 2%;
+    padding-bottom: 1%; 
 }
+
 .center{
     display: inline-block;
     vertical-align: middle;
@@ -37,30 +40,30 @@ h1{
 }
 
 .Summer.Morning, .AfterNoon{
-    background-image: url("./images/summer-morning.jpg");
+    background-image: url("../images/summer-morning.jpg");
 }
 
 .Summer.Evening{
-    background-image: url("./images/1685018.jpg");
+    background-image: url("../images/1685018.jpg");
 }
 
 .Summer.Night, .Sleep{
-    background-image: url("./images/photo.jpeg");
+    background-image: url("../images/photo.jpeg");
 }
 
 
 
 .Winter.Morning, .AfterNoon{
-    background-image: url("./images/a0xTgeG.jpg");
+    background-image: url("../images/a0xTgeG.jpg");
     
 }
 
 .Winter.Evening{
-    background-image: url("./images/1685018.jpg");
+    background-image: url("../images/1685018.jpg");
 }
 
 .Winter.Night ,.Sleep{
-    background-image: url("./images/50094.jpg");
+    background-image: url("../images/50094.jpg");
 
 }
 

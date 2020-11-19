@@ -1,5 +1,5 @@
 import React from "react";
-import "./WeatherDispay.css";
+import "./css/WeatherDispay.css";
 import Time from "./Time";
 
 const GetSeason = (lat, month) => {
@@ -24,21 +24,21 @@ const WeatherDispaly = (params) => {
   const Greet = Greetings(new Date().getHours());
 
   return (
-    <div className={`weather-display ${season} ${Greet}`}>
+    <div className={`weather-display ${season} ${Greet} container-fluid`}>
       <Time />
-      <div className="main-body">
+      <div className="container main-body shadow-lg p-3 mb-5 rounded">
         <h1 className="centre">{Greet}!!</h1>
-        <h2 className="centre">
+        <h4 className="centre">
           {params.city}({season})
-        </h2>
-        <h3 className="centre" style={{ paddingBottom: "25px" }}>
-          {params.weather}, <i className="cloud icon"></i> {params.temperature}
+        </h4>
+        <h5 className="centre" style={{ paddingBottom: "25px" }}>
+          {params.weather}, <i class="fas fa-cloud"></i> {params.temperature}
           {"\u00b0"}C
-        </h3>
-        <h3>
-          <i className="sync icon"></i> Last updated {params.lastUpdated}{" "}
-          minutes ago
-        </h3>
+        </h5>
+        <h6>
+          <i class="fas fa-sync"></i> Last updated {params.lastUpdated} minutes
+          ago
+        </h6>
       </div>
     </div>
   );
