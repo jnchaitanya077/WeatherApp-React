@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 class Time extends React.Component {
   state = { time: new Date().toLocaleTimeString() };

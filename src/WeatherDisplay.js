@@ -35,6 +35,9 @@ const WeatherDispaly = (params) => {
           {params.weather}, <i class="cloud icon"></i> {params.temperature}
           {"\u00b0"}C
         </h3>
+        <h3>
+          <i class="sync icon"></i> Last updated 23 minutes ago
+        </h3>
       </div>
     </div>
   );
